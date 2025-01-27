@@ -126,9 +126,8 @@ export function EarningsCalculator() {
 
   const calculateEarnings = useCallback(() => {
     if (error) return null;
-
     const now = new Date();
-    const startOfYear = new Date(now.getFullYear(), 0, 1);
+
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
     const daysInMonth = endOfMonth.getDate();
     
@@ -142,8 +141,10 @@ export function EarningsCalculator() {
     const dayOfMonth = now.getDate();
     const monthProgress = (dayOfMonth / daysInMonth) * 100;
 
+    const startOfYear = new Date(now.getFullYear(), 0, 1);
+    
     const dayOfYear = Math.floor(
-      (now - startOfYear) / (1000 * 60 * 60 * 24)
+      (now.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24)
     );
     const yearProgress = (dayOfYear / 365) * 100;
 
