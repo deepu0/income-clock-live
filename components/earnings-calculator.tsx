@@ -359,13 +359,13 @@ export function EarningsCalculator() {
         </div>
       </Card>
 
-      <footer className="text-center text-sm text-muted-foreground">
+      {/* <footer className="text-center text-sm text-muted-foreground">
         <div className="space-x-4">
           <a href="#" className="hover:underline">About</a>
           <a href="#" className="hover:underline">Feedback</a>
           <a href="#" className="hover:underline">Privacy Policy</a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
